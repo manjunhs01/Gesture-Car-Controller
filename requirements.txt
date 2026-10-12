@@ -1,0 +1,7 @@
+# Runtime dependencies (Python 3.10 - 3.12 recommended; see README)
+opencv-python>=4.8
+mediapipe>=0.10.14
+numpy>=1.24
+pynput>=1.7                      # global hotkeys (F8/F9/F10)
+psutil>=5.9                      # raise the process priority to High (lower latency while a game runs)
+vgamepad>=0.1.0; sys_platform == "win32"   # virtual Xbox 360 gamepad (needs the ViGEmBus driver)

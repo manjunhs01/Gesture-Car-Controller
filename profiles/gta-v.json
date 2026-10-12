@@ -1,0 +1,6 @@
+{
+  "description": "GTA V (keyboard): WASD driving, normal feel, nitro as a toggle.",
+  "output": {"backend": "keyboard", "key_preset": "wasd"},
+  "steering": {"feel": "normal"},
+  "gestures": {"nitro_mode": "toggle"}
+}

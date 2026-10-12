@@ -1,0 +1,6 @@
+{
+  "description": "Classroom or stage demo: keyboard output, realistic feel, large preview.",
+  "output": {"backend": "keyboard", "key_preset": "both"},
+  "steering": {"feel": "realistic"},
+  "app": {"preview": true, "preview_scale": 0.55}
+}

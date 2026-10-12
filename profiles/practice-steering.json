@@ -1,0 +1,12 @@
+{
+  "description": "Practice steering: 90 degrees straight, 150 degrees full left, 30 degrees full right.",
+  "steering": {
+    "full_lock_deg": 60.0,
+    "invert_steering": true,
+    "deadzone_deg": 1.0,
+    "smoothing": "ema",
+    "ema_alpha": 0.65,
+    "predict_frames": 0.0,
+    "auto_recenter_deg": 0.0
+  }
+}

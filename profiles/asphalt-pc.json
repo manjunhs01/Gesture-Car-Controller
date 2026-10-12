@@ -1,0 +1,5 @@
+{
+  "description": "Asphalt and other arcade PC racers on the keyboard: WASD plus arrow keys, normal feel.",
+  "output": {"backend": "keyboard", "key_preset": "both"},
+  "steering": {"feel": "normal"}
+}

@@ -1,0 +1,3 @@
+# Optional extras
+pystray>=0.19   # system-tray icon (set app.tray to true in config.json)
+pillow>=10.0

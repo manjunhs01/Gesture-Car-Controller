@@ -1,0 +1,6 @@
+{
+  "description": "Forza and other simulation racers: virtual Xbox gamepad with true analog steering, heavy realistic wheel. Needs ViGEmBus.",
+  "output": {"backend": "gamepad", "fallback_to_keyboard": true},
+  "steering": {"feel": "realistic"},
+  "gestures": {"nitro_mode": "pulse"}
+}

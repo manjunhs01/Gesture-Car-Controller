@@ -1,0 +1,5 @@
+{
+  "description": "Browser racing games (A/D steer, W gas, S brake, Shift nitro). Keys only, snappy steering.",
+  "output": {"backend": "keyboard", "key_preset": "both"},
+  "steering": {"feel": "arcade"}
+}

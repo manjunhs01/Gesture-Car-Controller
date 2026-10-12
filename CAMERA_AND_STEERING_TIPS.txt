@@ -1,0 +1,16 @@
+GESTURE CAR — CAMERA / LOW-LAG PROFILE
+
+Changes in this build:
+- Requests 640x480 at 30 FPS (often more reliable than requesting 60 FPS from a built-in webcam).
+- Uses 480px inference width to reduce MediaPipe processing delay.
+- Slightly more tolerant hand detection/tracking confidence thresholds.
+- If hands are lost for 0.2 seconds, output returns to neutral to avoid a stuck steering command.
+
+SETUP FOR THE CAMERA
+1. Put the laptop on a stable surface and use bright, even light facing your hand.
+2. Keep your entire hand and wrist visible in the camera preview. Do not put the hand extremely close to the lens; start about 50–80 cm away and adjust until the hand is clearly visible.
+3. Avoid backlighting, dark rooms, motion blur, and other apps using the webcam.
+4. Run run.bat. Keep your hand inside the camera view and perform calibration with a steady neutral pose.
+5. For browser games, click the game window after the controller starts so keyboard input goes to the game.
+
+If delay remains, close video-call/browser camera tabs and check the app's displayed inference FPS/latency. This software cannot guarantee a particular FPS on every webcam/PC. Test in a game/simulator only, never a real vehicle.
