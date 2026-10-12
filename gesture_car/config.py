@@ -25,7 +25,7 @@ class CameraConfig:
     backend: str = "auto"  # Windows capture backend: auto (DirectShow, then Media Foundation, then default) | dshow | msmf
     width: int = 640  # 640x480 keeps latency lowest; the closest mode the camera supports is used
     height: int = 480
-    fps: int = 60  # asked for; most webcams top out at 30 and the closest rate they support is used
+    fps: int = 30  # asked for; most webcams top out at 30 and the closest rate they support is used
     mjpg: bool = True  # ask USB webcams for MJPG (higher FPS over USB); falls back automatically if unsupported
     mirror: bool = True
     auto_exposure: bool = True  # false = fixed ``exposure``: auto-exposure in a dim room can drop a webcam to 15-20 fps
@@ -40,10 +40,10 @@ class VisionConfig:
     model_path: str = ""
     max_hands: int = 2
     model_complexity: int = 0  # 0 = fastest; only used by the legacy MediaPipe backend
-    min_detection_confidence: float = 0.5
-    min_presence_confidence: float = 0.4
-    min_tracking_confidence: float = 0.5  # tracking mode: the palm detector only re-runs when tracking drops below this
-    inference_width: int = 640
+    min_detection_confidence: float = 0.45
+    min_presence_confidence: float = 0.45
+    min_tracking_confidence: float = 0.45  # tracking mode: the palm detector only re-runs when tracking drops below this
+    inference_width: int = 480
     use_gpu: bool = False  # try MediaPipe's GPU delegate; falls back to the CPU (and logs why) if unsupported or slower
     LIMITS: ClassVar[Limits] = {
         "max_hands": (2, 2),
@@ -154,7 +154,7 @@ class GestureConfig:
 
 @dataclass
 class SafetyConfig:
-    hands_lost_s: float = 0.3  # steering hands missing this long -> safe state
+    hands_lost_s: float = 0.2  # steering hands missing this long -> safe state
     lost_behavior: str = "neutral"  # neutral | gentle_brake (S/left trigger can mean REVERSE in some games)
     gentle_brake_level: float = 0.35
     freeze_steering_during_gesture: bool = True  # a hand OUT OF VIEW for brake/nitro holds the wheel; never with both hands seen
@@ -217,7 +217,7 @@ class AppConfig:
     priority: str = "high"  # process priority: high keeps frames on time while a game runs | above_normal | normal | below_normal
     log_level: str = "INFO"
     preview: bool = True  # small always-on-top camera window; run_silent.vbs / --no-preview turn it off
-    preview_scale: float = 0.5  # window size multiplier (0.5 = about 320 px wide; 0.7 = 450; 1 = 640; 1.5 = projector)
+    preview_scale: float = 0.65  # window size multiplier (0.5 = about 320 px wide; 0.7 = 450; 1 = 640; 1.5 = projector)
     tray: bool = False  # optional tray icon (Start/Pause/Recalibrate/Quit); needs pystray + pillow
     LIMITS: ClassVar[Limits] = {"loop_hz": (30, 1000), "preview_scale": (0.3, 3.0)}
     CHOICES: ClassVar[Choices] = {"log_level": ("DEBUG", "INFO", "WARNING", "ERROR"), "priority": ("high", "above_normal", "normal", "below_normal")}
